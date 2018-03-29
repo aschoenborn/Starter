@@ -1,6 +1,10 @@
 @import url( 'https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700');
 @import "reset";
 
+*{
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Roboto', sans-serif;
   // background: purple;
@@ -10,10 +14,44 @@ h1 {
   font-weight: 100;
   font-size: 50px;
 }
+header{
+  ul{
+    li{
+      display: inline-block;
+      padding: 20px;
+    }
+  }
+}
 
 .blue-bg {
   background: blue;
+  overflow: auto;
+  height: 100%;
+  padding: 25px;
 }
 .danger-red {
   background: red !important;
+}
+.user-info{
+  width: 50%;
+  float: left;
+  color: white;
+
+  h3{
+    font-size: 30px;
+  }
+}
+
+.GirlImageComp{
+  float: left;
+  width: 50%;
+
+  h3{
+    color: white;
+    font-size: 30px;
+  }
+
+  img {
+    width: 400px;
+  }
 }

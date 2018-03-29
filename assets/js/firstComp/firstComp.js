@@ -22,14 +22,36 @@ class Layout extends Component {
   }
   render () {
     return (<div id="parent">
+    <Header />
       <div className={`blue-bg ${(this.state.health < 55) ? 
       this.state.lowLevelClass : ''}`}>
+      <div className={'user-info'}>
         <h3>Name: {this.state.name}</h3>
-        <h3>Health: {this.state.health}</h3>
         <h3>Level: {this.state.level}</h3>
-        <img src="/img/bape.png" alt={'girl with bape'} 
-          onClick={this.clickedGirl}/>
       </div>
+        <GirlImage girlClicked={this.clickedGirl} 
+          health={this.state.health}/>
+      </div>
+    </div>
+    )
+  }
+}
+
+class GirlImage extends Component {
+  constructor () {
+    super()
+    this.state = {
+      gameOver: 'SORRY YOU ARE DEAD :/'
+    }
+  }
+
+  
+  render () {
+    return (<div className="GirlImageComp">
+      <img src="/img/bape.png" alt={'girl with bape'} 
+          onClick={this.props.girlClicked}/>
+        <h3>Health: {(this.props.health <= 0) ? 
+          this.state.gameOver : this.props.health}</h3>
     </div>
     )
   }
